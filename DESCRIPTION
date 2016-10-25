@@ -1,0 +1,10 @@
+Package: timehelpers
+Type: Package
+Title: Date & Time Helper Functions for Dashboarding
+Version: 0.1.0
+Author: Sami Kallinen (notjustsilicon@gmail.com)
+Maintainer: Sami Kallinen <notjustsilicon@gmail.com>
+Description: Date and time helper functions for dashboarding purposes
+License: MIT + file LICENSE
+LazyData: TRUE
+Imports: lubridate, dplyr, magrittr
