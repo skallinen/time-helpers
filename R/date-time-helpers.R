@@ -7,8 +7,11 @@
 #' @return a concatenated string
 #' @author Sami Kallinen
 #' @export
+#'
+`%+%`                  <- function(x, y){
+  paste0(x, y)
+}
 
-`%+%`                  <- function(x, y) {paste0(x, y)}
 
 
 #' Stores The Default Time Zone
@@ -18,9 +21,22 @@
 #' @return a string containing "EET" eastern european time code.
 #' @author Sami Kallinen
 #' @export
-
-
 get_time_zone              <- function(){"EET"}
+
+#' Trunctates a POSIXct date
+#'
+#' Does the same as truc but for a POSIXct date.
+#'
+#' @return a POSIXct object
+#' @author Sami Kallinen
+#' @param date a POSICct date object
+#' @param units one of the following units c\("secs", "mins", "hours", "days"\). Can be abbreviated.
+#' @export
+trunc_date <- function(date, units){
+  date %>%
+    as.Date %>% trunc(units) %>%
+    lubridate::ymd(tz =get_time_zone())
+}
 
 #' The Current Year
 #'
